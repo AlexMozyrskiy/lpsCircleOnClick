@@ -6,9 +6,14 @@ function lpsCircleOnClick(arr)
         elementsClass: 'button',         // класс элементов при нажатии на каждый из которых будет происходить анимация
         circleColor: 'red',             // цвет круга анимации
         animationDuration: '0.5',        // длительность анимации
+        overflowHidden: false,          // будет ли применено свойство overflow: hidden, то есть будет ли окружность появляющаяся при клике выходить за пределы элемента, по умолчинию false
     });
 */
 {
+    if(typeof arr.overflowHidden == 'undefined') {      // если разрабоьчтк не указал overflowHidden примем его в false, и не будем добавлять совйство в css
+        arr.overflowHidden = false;
+    }
+
     const elements = document.getElementsByClassName(arr.elementsClass);
 
     let clickCoordinateX;               //  координата клика по X
@@ -32,7 +37,9 @@ function lpsCircleOnClick(arr)
     // ---------- / вставим в head тег style лющаие для всех элементов, чтобы разработчик мог определить стили круга такие как: circleColor: 'white', animationDuration: '.5' -------
 
     Array.prototype.forEach.call(elements, function(element) {
-        element.style.overflow = 'hidden';
+        if(arr.overflowHidden) {     // если разработчик указал
+            element.style.overflow = 'hidden';
+        }
         element.style.position = 'relative';
 
         element.addEventListener('click', (e) => {
