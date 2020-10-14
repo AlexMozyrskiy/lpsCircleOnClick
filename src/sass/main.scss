@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    border: none;
+    background-color: aqua;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 10px;
+
+    &_1 {
+        height: 100px;
+        width: 200px;
+    }
+
+    &_2 {
+        height: 50px;
+        width: 100px;
+    }
+
+    &_3 {
+        height: 200px;
+        width: 400px;
+    }
+}

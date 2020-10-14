@@ -1,0 +1,19 @@
+.lpsCircleOnClick {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    transform: scale(0);
+    transition: 1s all;
+    animation-name: lpsCircleOnClick;
+    animation-duration: .5s;
+}
+
+@keyframes lpsCircleOnClick {
+    to {
+        transform: scale(2);
+        background-color: #fff;
+        opacity: 0;
+    }
+}
